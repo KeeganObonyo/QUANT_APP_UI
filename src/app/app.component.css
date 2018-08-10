@@ -1,0 +1,30 @@
+ul{
+    list-style-type: none;
+}
+ul{
+    display: inline;
+}
+ul li a:visited{
+text-decoration: 
+`}
+.mat-toolbar-row, .mat-toolbar-single-row#topmost{
+    height: 64px!important;
+/*    color: #17a2b8!important;*/
+}
+a.nav-link{
+
+}
+.nav-link {
+    display: block;
+    padding: .1rem 1rem;
+        padding-top: 1rem;
+        padding-right: 0rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.5rem;
+	font-size:0.8em;
+}
+
+.mat-toolbar {
+    background: #17a2b8;
+    /*color: rgba(0,0,0,.87);*/
+}

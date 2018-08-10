@@ -1,0 +1,65 @@
+/*creating responsiveness using media queries to cater for the different screen sizes*/
+
+.mat-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 50%;
+}
+.mat-datepicker-toggle {
+    color: white;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+div.container-fluid{
+  /*width: 100%;*/
+  background-image:url("/src/images/rawpixel-586687-unsplash (1).jpg");
+  position: absolute;
+  top:63px; bottom:0; right:0; left:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+div.container-fluid{
+  /*width: 100%;*/
+  background-image:url("/src/images/rawpixel-586687-unsplash (1).jpg");
+  position: absolute;
+  top:63px; bottom:0; right:0; left:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	div.container-fluid{
+  /*width: 100%;*/
+  background-image:url("/src/images/rawpixel-586687-unsplash (1).jpg");
+  position: absolute;
+  top:55px; bottom:-223px; right:0; left:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+} 
+#parent {
+    list-style: none;
+    width: 100%;
+    height: 90px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#parent > li {
+    display: inline-block;
+}
+
+#parent > li:nth-child(even) {
+}

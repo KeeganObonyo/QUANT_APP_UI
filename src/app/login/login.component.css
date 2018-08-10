@@ -1,0 +1,35 @@
+/*creating responsiveness using media queries to cater for the different screen sizes*/
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+div.container-fluid{
+  /*width: 100%;*/
+  background-image:url("/src/images/rawpixel-586687-unsplash (1).jpg");
+  position: absolute;
+  top:63px; bottom:0; right:0; left:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+div.container-fluid{
+  /*width: 100%;*/
+  background-image:url("/src/images/rawpixel-586687-unsplash (1).jpg");
+  position: absolute;
+  top:63px; bottom:0; right:0; left:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  div.container-fluid{
+  /*width: 100%;*/
+  background-image:url("/src/images/rawpixel-586687-unsplash (1).jpg");
+  position: absolute;
+  top:55px; bottom:-183px; right:0; left:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+} 
