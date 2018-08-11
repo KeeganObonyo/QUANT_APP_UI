@@ -61,5 +61,17 @@ div.container-fluid{
     display: inline-block;
 }
 
-#parent > li:nth-child(even) {
+.form-control {
+    display: flex;
+    width: 75%;
+    height: calc(1.88rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 0.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
