@@ -16,12 +16,14 @@ import {MatNativeDateModule, MatSliderModule, DateAdapter} from '@angular/materi
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SignUpService } from './signup.service';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomepageComponent
   ],
   imports: [
     FormsModule,

@@ -22,7 +22,7 @@
       </div>
         <ul id="parent">
           <li>
-          <input class="form-control" matInput [matDatepicker]="picker" placeholder="date of birth" required>
+          <input  [(ngModel)]="new_user.dateofbirth" class="form-control" matInput [matDatepicker]="picker" name="date" placeholder="date of birth" required>
           </li>
           <li>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

@@ -46,7 +46,6 @@ export class SignupComponent {
     if (this.pass.password === this.pass.password1) {
       this.password_not_match = false;
       this.save();
-      console.log('break');
     } else {
       this.password_not_match = true;
     }
@@ -58,6 +57,7 @@ export class User {
   firstname: string;
   lastname: string;
   email: string;
+  dateofbirth: string;
   password: string;
 
 }
