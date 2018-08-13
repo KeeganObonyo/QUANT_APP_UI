@@ -1,3 +1,4 @@
+import { LoginService } from './login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -12,6 +13,9 @@ import {MatInputModule} from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { SignupComponent } from './signup/signup.component';
 import {MatNativeDateModule, MatSliderModule, DateAdapter} from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { SignUpService } from './signup.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,7 @@ import {MatNativeDateModule, MatSliderModule, DateAdapter} from '@angular/materi
     SignupComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -32,8 +37,9 @@ import {MatNativeDateModule, MatSliderModule, DateAdapter} from '@angular/materi
     MatToolbarModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [LoginService, SignUpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

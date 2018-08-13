@@ -4,19 +4,19 @@
     <form action="" style="margin-top: 80px">
       <p><i>The wise feed their minds.</i></p>
       <div class="form-group">
-        <label for="username"></label>
-        <input placeholder="username" class="form-control"name ="username" type="text">
+        <label for="email"></label>
+        <input placeholder="email" [(ngModel)]="credential.email" class="form-control" name="email" type="text" required>
       </div>
       <div class="form-group">
         <label for="password"></label>
-        <input placeholder="password" class="form-control" name="password" type="password">
+        <input placeholder="password" [(ngModel)]="credential.password" class="form-control" name="password" type="password" required>
       </div>
       <div class="form-group form-check">
         <input class="form-check-input" name="checkbox" type="checkbox">
         <label style="color: white" class="form-check-label" for="checkbox">Remember Me</label>
       </div>      
     </form>
-    <button type="submit" class="btn btn-info">Login</button>
+    <button (click)="onLogin()" type="submit" class="btn btn-info">Login</button>
   </div>
   </div>
 </div>

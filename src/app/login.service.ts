@@ -1,9 +1,31 @@
 import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
+import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+import { AppConst } from './app-const';
+
+
+@Injectable()
 export class LoginService {
 
-  constructor() { }
+  private Path: string = AppConst.serverPath;
+
+
+  constructor(private http: Http, private router: Router) { }
+
+
+  getUserToken(credentials: any) {
+    const url = this.Path + '/user/auth/';
+    const headers = new Headers({
+      // 'Content-Type': 'application/json',
+    });
+
+    return this.http.post(url, JSON.stringify(credentials), { headers: headers });
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
+
 }
