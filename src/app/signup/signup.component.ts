@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -23,10 +23,11 @@ export class SignupComponent {
   constructor(public http: Http, public router: Router, public route: ActivatedRoute, public sign: SignUpService) { }
 
   new_user: User = new User();
+  pass: Passwords = new Passwords();
+  password_not_match: boolean;
 
   save() {
     console.log(this.new_user);
-
     this.sign.registerUser(this.new_user).subscribe(
       res => {
         console.log(res.text());
@@ -40,6 +41,17 @@ export class SignupComponent {
 
   }
 
+  validate() {
+
+    if (this.pass.password === this.pass.password1) {
+      this.password_not_match = false;
+      this.save();
+      console.log('break');
+    } else {
+      this.password_not_match = true;
+    }
+  }
+
 }
 
 export class User {
@@ -48,4 +60,9 @@ export class User {
   email: string;
   password: string;
 
-  }
+}
+
+export class Passwords {
+  password: string;
+  password1: string;
+}
