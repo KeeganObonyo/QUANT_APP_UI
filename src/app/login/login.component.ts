@@ -30,7 +30,7 @@ export class LoginComponent {
     console.log(this.credential);
     this.log.getUserToken(this.credential).subscribe(
       res => {
-        localStorage.setItem('token', 'JWT_' + res.json().token);
+        localStorage.setItem('token', 'JWT ' + res.json().token);
         this.loggedIn = true;
         console.log(localStorage.getItem('token'));
         this.router.navigate(['/']);

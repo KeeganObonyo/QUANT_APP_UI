@@ -7,24 +7,19 @@ import { AppConst } from './app-const';
 
 
 @Injectable()
-export class LoginService {
+export class HomepageService {
 
   private Path: string = AppConst.serverPath;
 
-
   constructor(private http: Http, private router: Router) { }
 
-
-  getUserToken(credentials: any) {
-    const url = this.Path + '/user/auth/';
+  getLatestdata() {
+    const url = this.Path + '/get/data/';
     const headers = new Headers({
+      'Authorization': localStorage.getItem('token'),
     });
 
-    return this.http.post(url, JSON.stringify(credentials), { headers: headers });
-  }
-
-  logout() {
-    localStorage.removeItem('token');
+    return this.http.get(url, { headers: headers });
   }
 
 }
