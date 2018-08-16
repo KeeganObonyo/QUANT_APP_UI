@@ -4,3 +4,13 @@
     width: 636px!important;
     height: 300px!important;
 }
+th
+{
+    font-weight: 600!important;
+    font-size: 0.8em!important;
+}
+table,td{
+    padding: 1.2rem!important;
+    font-size: 0.95em!important;
+
+}
