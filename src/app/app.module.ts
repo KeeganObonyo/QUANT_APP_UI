@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SignUpService } from './signup.service';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomepageComponent } from './homepage/homepage.component';
   ],
   imports: [
     FormsModule,
+    ChartsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

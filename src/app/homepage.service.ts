@@ -16,9 +16,8 @@ export class HomepageService {
   getLatestdata() {
     const url = this.Path + '/get/data/';
     const headers = new Headers({
-      'Authorization': localStorage.getItem('token'),
+      'Authorization': localStorage.getItem('token')
     });
-
     return this.http.get(url, { headers: headers });
   }
 
