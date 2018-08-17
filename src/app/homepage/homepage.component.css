@@ -1,16 +1,55 @@
 
 #canvas {
     display: block;
-    width: 636px!important;
-    height: 300px!important;
+    width: 586px!important;
+    height: 250px!important;
+    /* color: rgba(0,0,0)!important; */
 }
 th
 {
     font-weight: 600!important;
     font-size: 0.8em!important;
+    color: #bcb7b7;
+    
 }
-table,td{
-    padding: 1.2rem!important;
+.table,td{
+    /* padding: 1.0rem!important; */
     font-size: 0.95em!important;
+    padding-right: 0.2em!important;
+    padding-left: 0.2em!important;
+    padding-top: 1.0em!important;
+    padding-bottom: 1.1em!important;
+    border-bottom: 1px solid rgba(189,149,0,0.4);
+    border-top: 1px solid rgba(189,149,0,0.4);
+    border-right: 1px solid rgba(189,149,0,0.4);
+    border-left: 1px solid rgba(189,149,0,0.4);
+    /* color: #00b819; */
 
+}
+.table th {
+    padding: .75rem;
+    padding-top: 0.25rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.8rem!important;
+    vertical-align: top;
+    border-bottom: 0px;
+    border-top: 0px;
+}
+div.container-fluid{
+  background-color:transparent;
+  position: absolute;
+  top:63px; bottom:10px; right:0; left:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#canvas2 {
+    display: block;
+    width: 500px!important;
+    height: 235px!important;
+    /* color: rgba(0,0,0)!important; */
+}
+.table{
+    margin-top: 30px;
 }

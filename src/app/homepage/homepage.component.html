@@ -1,30 +1,31 @@
-
-    <div class="row">
-      <div class="col-md-6">
-        <div style="display: block;">
-        <canvas id="canvas" baseChart
-                    [datasets]="lineChartData"
-                    [labels]="lineChartLabels"
-                    [options]="lineChartOptions"
-                    [colors]="lineChartColors"
-                    [legend]="lineChartLegend"
-                    [chartType]="lineChartType"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)"></canvas>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div style="display: block;">
+        <canvas id="canvas" baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+          [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
       </div>
-      <div class="col-md-6" style="margin-bottom: 1px">
+    </div>
+    <div>
+      <br>
+    </div>
+    <div class="col-md-6" style="margin: 0px">
+      <div style="display: block">
+        <canvas id="canvas2" baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
+          [colors]="polarChartColors" (chartHover)="chartHovered($event)" (chartClick)=chartClicked($event)></canvas>
+      </div>
+    </div>
+    <div class="col-md-6" style="margin: 0px">
         <table class="table table-responsive-md table-condensed">
           <tr>
             <th></th>
-            <th *ngFor="let label of lineChartLabels">{{label}}</th>
+            <th *ngFor="let label of TableLabels">{{label}}</th>
           </tr>
-          <tr *ngFor="let d of lineChartData">
-            <th >{{d.label}}</th>
-            <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
+          <tr *ngFor="let d of TableData">
+            <th>{{d.label}}</th>
+            <td *ngFor="let label of TableLabels; let j=index">{{d && d.data[j]}}</td>
           </tr>
         </table>
-        <!-- <button (click)="randomize()">CLICK</button> -->
       </div>
-    </div>
-
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomepageService } from '../homepage.service';
 import { Http } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CDK_TABLE_TEMPLATE } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-homepage',
@@ -23,61 +24,79 @@ export class HomepageComponent implements OnInit {
     responsive: true
   };
   public lineChartColors: Array<any> = [
-    { // grey
-      backgroundColor: 'rgba(0,161,184,0.3)',
-      borderColor: 'rgba(202,0,81,0.8)',
-      pointBackgroundColor: 'rgba(189,145,0,0.7)',
-      pointBorderColor: 'rgba(0,161,184,0.8)',
+    { // blue
+      backgroundColor: 'rgba(0,161,184,0.2)',
+      // borderColor: 'rgba(202,0,81,0.8)',
+      pointBackgroundColor: 'rgba(0,161,184)',
+      pointBorderColor: 'rgba(0,161,184)',
       pointHoverBackgroundColor: 'rgba(0,161,184,0.8)',
-      pointHoverBorderColor: 'rgba(0,161,184,0.8)'
+      pointHoverBorderColor: 'rgba(0,161,184)'
     },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#00b819',
-      pointHoverBackgroundColor: '#00b819',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
+    { // purple
+      backgroundColor: 'rgba(120,0,187,0.1)',
+      // borderColor: 'rgba(77,83,96)',
+      pointBackgroundColor: 'rgba(120,0,187)',
+      pointBorderColor: '#6800b8',
+      pointHoverBackgroundColor: 'rgba(120,0,187,0.2)',
+      pointHoverBorderColor: 'rgba(120,0,187)'
     },
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#00b819',
-      pointHoverBackgroundColor: '#00b819',
+    { // greenish
+      backgroundColor: 'rgba(189,149,0,0.3)',
+      // borderColor: 'rgba(189,149,0)',
+      pointBackgroundColor: 'rgba(189,149,0)',
+      pointBorderColor: 'rgba(189,149,0)',
+      pointHoverBackgroundColor: 'rgba(189,149,0)',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#00b819',
-      pointHoverBackgroundColor: '#00b819',
+    { // red
+      backgroundColor: 'rgba(200,43,0,0.2)',
+      // borderColor: 'rgba(148,159,177,1)',
+      pointBackgroundColor: 'rgba(200,43,0)',
+      pointBorderColor: 'rgba(200,43,0)',
+      pointHoverBackgroundColor: 'rgba(200,43,0)',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    }
+  ];
+  // polar chart
+
+  public polarAreaChartLabels: any[] = ['open', 'high', 'low', 'close'];
+  public polarAreaChartData: any[] = [0.65, 0.59, 0.80, 0.81];
+  public polarAreaLegend = true;
+  public polarAreaChartType = 'polarArea';
+  public polarChartColors: Array<any> = [
+    { // all colors in order
+      backgroundColor: ['rgba(0,161,184,0.5)', 'rgba(120,0,187,0.4)', 'rgba(189,149,0,0.5)', 'rgba(200,43,0,0.4)']
     }
   ];
   public lineChartLegend = true;
   public lineChartType = 'line';
-  public newdata: any;
+  public newdata: any[] = [];
   public x_axis: string[] = [];
   public y_axis_open: string[] = [];
   public y_axis_close: string[] = [];
   public y_axis_high: string[] = [];
   public y_axis_low: string[] = [];
+  public newlist: any[] = [];
+  public newlist1: any[] = [];
 
 
-  public randomize(): void {
-    this.datas.getLatestdata();
+  // table data
+  public TableData: Array<any> = [
+    { data: [0.65, 0.59, 0.80, 0.81, 56], label: 'volatility' }];
+  public TableLabels: Array<any> = ['volume', 'open', 'high', 'low', 'close'];
+  public getdata(): void {
 
     this.datas.getLatestdata().subscribe(
       res => {
         this.newdata = res.json();
-        for (const k in this.newdata.time_series_slice) {
+        for (const k in this.newdata) {
           if (k) {
-            this.x_axis.push(k);
+            const str = k;
+            const newstr = str.slice(11);
+            this.x_axis.push(newstr);
           }
         }
-        const data_to_loop = this.newdata.time_series_slice;
+        const data_to_loop = this.newdata;
         for (const key in data_to_loop) {
           if (key) {
             const value = data_to_loop[key];
@@ -85,6 +104,7 @@ export class HomepageComponent implements OnInit {
             this.y_axis_high.push(value['2. high']);
             this.y_axis_low.push(value['3. low']);
             this.y_axis_close.push(value['4. close']);
+
           }
         }
         this.lineChartLabels = this.x_axis;
@@ -97,6 +117,7 @@ export class HomepageComponent implements OnInit {
         this.lineChartData[3].label = 'close';
         this.lineChartData[3].data = this.y_axis_close;
 
+
       },
       error => {
         console.log(error);
@@ -104,18 +125,48 @@ export class HomepageComponent implements OnInit {
     );
 
   }
+  // retrieve analysis volatility
+  public getAnalysis() {
+    this.datas.getAnalysis().subscribe(
+      res => {
+        this.newdata = res.json();
+        this.newlist1.push(this.newdata[1]['open']);
+        this.newlist1.push(this.newdata[3]['high']);
+        this.newlist1.push(this.newdata[4]['low']);
+        this.newlist1.push(this.newdata[2]['close']);
+        this.polarAreaChartData = this.newlist1;
+        this.table();
+      },
+      error => {
+        console.log(error);
+      }
+
+    );
+
+  }
 
   // events
-  public chartClicked(e: any): void {
-    console.log(e);
+  public chartClicked() {
+    console.log('uber');
   }
 
   public chartHovered(e: any): void {
     console.log(e);
   }
+  public table() {
+    const newlist1: any[] = [];
+    newlist1.push(this.newdata[0]['volume']);
+    newlist1.push(this.newdata[1]['open']);
+    newlist1.push(this.newdata[3]['high']);
+    newlist1.push(this.newdata[4]['low']);
+    newlist1.push(this.newdata[2]['close']);
+    this.TableData[0].data = newlist1;
+  }
 
   ngOnInit() {
-    this.randomize();
+    this.getdata();
+    this.getAnalysis();
   }
 
 }
+
