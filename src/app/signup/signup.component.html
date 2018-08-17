@@ -1,36 +1,48 @@
 <div id="login1" class="image">
-  <div class="container-fluid" >
+  <div class="container-fluid">
     <div class="col-md-4 mx-auto">
       <form action="" style="margin-top: 50px">
         <div *ngIf="password_not_match==true" class="alert alert-danger">
           passwords must match
         </div>
-      <div class="form-group">
-        <input [(ngModel)]="new_user.firstname" placeholder="first name" class="form-control"name ="firstname" type="text" required>
-      </div>
-      <div class="form-group">
-        <input [(ngModel)]="new_user.lastname" placeholder="last name" class="form-control"name ="lastname" type="text" required>
-      </div>
-      <div class="form-group">
-        <input [(ngModel)]="new_user.email" placeholder="email"class="form-control"name ="email" type="text" required>
-      </div>
-      <div class="form-group">
-        <input [(ngModel)]="pass.password" [(ngModel)]="new_user.password" placeholder="password"class="form-control" name="password" type="password" required>
-      </div>
-      <div class="form-group">
-        <input [(ngModel)]="pass.password1" placeholder="confirm password"class="form-control" name="password1" type="password" required>
-      </div>
+        <div class="form-group">
+          <input [(ngModel)]="new_user.firstname" placeholder="first name" class="form-control" name="firstname" type="text" required>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="new_user.lastname" placeholder="last name" class="form-control" name="lastname" type="text" required>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="new_user.email" placeholder="email" class="form-control" name="email" type="text" required>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="pass.password" [(ngModel)]="new_user.password" placeholder="password" class="form-control" name="password"
+            type="password" required>
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="pass.password1" placeholder="confirm password" class="form-control" name="password1" type="password"
+            required>
+        </div>
         <ul id="parent">
           <li>
-          <input  [(ngModel)]="new_user.dateofbirth" class="form-control" matInput [matDatepicker]="picker" name="date" placeholder="date of birth" required>
+            <input [(ngModel)]="new_user.dateofbirth" class="form-control" matInput [matDatepicker]="picker" name="date" placeholder="date of birth"
+              required>
           </li>
           <li>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </li>
-        </ul>     
-    </form>
-    <button (click)="validate()" type="submit" class="btn btn-info">SignUp</button>
-  </div>
+        </ul>
+        <div>
+          <ul id="button">
+            <li>
+              <button (click)="loginfunc()" class="btn btn-info">SignIn</button>
+            </li>
+            <li>
+              <button (click)="validate()" type="submit" class="btn btn-info">SignUp</button>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
