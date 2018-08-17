@@ -6,7 +6,7 @@ ul{
 }
 ul li a:visited{
 text-decoration: 
-`}
+}
 .mat-toolbar-row, .mat-toolbar-single-row#topmost{
     height: 64px!important;
 /*    color: #17a2b8!important;*/
@@ -25,6 +25,7 @@ a.nav-link{
 }
 
 .mat-toolbar {
-    background: #17a2b8;
+    /* background: rgba(189,145,0,0.7);
     /*color: rgba(0,0,0,.87);*/
+    background-color: #00a1b8;
 }

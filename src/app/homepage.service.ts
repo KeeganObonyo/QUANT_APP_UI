@@ -20,5 +20,12 @@ export class HomepageService {
     });
     return this.http.get(url, { headers: headers });
   }
+  getAnalysis() {
+    const url = this.Path + '/get/graph/';
+    const headers = new Headers({
+      'Authorization': localStorage.getItem('token')
+    });
+    return this.http.get(url, { headers: headers });
+  }
 
 }
