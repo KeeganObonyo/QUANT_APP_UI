@@ -33,7 +33,7 @@ export class LoginComponent {
         localStorage.setItem('token', 'JWT ' + res.json().token);
         this.loggedIn = true;
         console.log(localStorage.getItem('token'));
-        this.router.navigate(['/home']);
+        this.router.navigate(['']);
       },
       error => {
         console.log(error);

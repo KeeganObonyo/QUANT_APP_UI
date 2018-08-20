@@ -65,7 +65,7 @@ export class HomepageComponent implements OnInit {
   public polarAreaChartType = 'polarArea';
   public polarChartColors: Array<any> = [
     { // all colors in order
-      backgroundColor: ['rgba(0,161,184,0.5)', 'rgba(120,0,187,0.4)', 'rgba(189,149,0,0.5)', 'rgba(200,43,0,0.4)']
+      backgroundColor: ['rgba(0,161,184)', 'rgba(120,0,187)', 'rgba(189,149,0)', 'rgba(200,43,0)']
     }
   ];
   public lineChartLegend = true;
@@ -81,9 +81,8 @@ export class HomepageComponent implements OnInit {
 
 
   // table data
-  public TableData: Array<any> = [
-    { data: [0.65, 0.59, 0.80, 0.81, 56], label: 'volatility' }];
-  public TableLabels: Array<any> = ['volume', 'open', 'high', 'low', 'close'];
+  public TableListData: Array<any> = [
+    { data: [56, 0.65, 0.59, 0.80, 0.81], label: ['volume', 'open', 'high', 'low', 'close'] }];
   public getdata(): void {
 
     this.datas.getLatestdata().subscribe(
@@ -160,7 +159,7 @@ export class HomepageComponent implements OnInit {
     newlist1.push(this.newdata[3]['high']);
     newlist1.push(this.newdata[4]['low']);
     newlist1.push(this.newdata[2]['close']);
-    this.TableData[0].data = newlist1;
+    this.TableListData[0].data = newlist1;
   }
 
   ngOnInit() {

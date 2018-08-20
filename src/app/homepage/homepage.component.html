@@ -1,31 +1,90 @@
 <div class="container-fluid">
+  <h5 class="text-center" style="font-family: 'Open Sans', sans-serif; font-weight: 500">Financial Time-series for MST</h5>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div style="display: block;">
         <canvas id="canvas" baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
           [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
       </div>
     </div>
-    <div>
-      <br>
-    </div>
-    <div class="col-md-6" style="margin: 0px">
+    <div class="col-md-5" style="margin: 0px">
       <div style="display: block">
         <canvas id="canvas2" baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
           [colors]="polarChartColors" (chartHover)="chartHovered($event)" (chartClick)=chartClicked($event)></canvas>
       </div>
     </div>
-    <div class="col-md-6" style="margin: 0px">
-        <table class="table table-responsive-md table-condensed">
-          <tr>
-            <th></th>
-            <th *ngFor="let label of TableLabels">{{label}}</th>
-          </tr>
-          <tr *ngFor="let d of TableData">
-            <th>{{d.label}}</th>
-            <td *ngFor="let label of TableLabels; let j=index">{{d && d.data[j]}}</td>
-          </tr>
-        </table>
-      </div>
+    <div class="col-md-2">
+      <table class="table table-responsive-md table-condensed">
+        <tr>
+          <th></th>
+          <th>volatility</th>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[0]}}</th>
+          <td>{{d.data[0]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[1]}}</th>
+          <td>{{d.data[1]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[2]}}</th>
+          <td>{{d.data[2]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[3]}}</th>
+          <td>{{d.data[3]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[4]}}</th>
+          <td>{{d.data[4]}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-md-5" style="margin: 0px">
+      <div style="display: block">
+        <canvas id="canvas2" baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
+          [colors]="polarChartColors" (chartHover)="chartHovered($event)" (chartClick)=chartClicked($event)></canvas>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div style="display: block;">
+        <canvas id="canvas" baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+          [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <table class="table table-responsive-md table-condensed">
+        <tr>
+          <th></th>
+          <th>volatility</th>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[0]}}</th>
+          <td>{{d.data[0]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[1]}}</th>
+          <td>{{d.data[1]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[2]}}</th>
+          <td>{{d.data[2]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[3]}}</th>
+          <td>{{d.data[3]}}</td>
+        </tr>
+        <tr *ngFor="let d of TableListData">
+          <th>{{d.label[4]}}</th>
+          <td>{{d.data[4]}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p>.</p>
 </div>
