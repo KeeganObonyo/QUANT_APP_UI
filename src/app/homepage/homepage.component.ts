@@ -16,8 +16,14 @@ export class HomepageComponent implements OnInit {
   public lineChartData: Array<any> = [
     { data: [65, 59, 80, 81, 56, 55, 40, 56, 55, 40], label: 'variable1' },
     { data: [28, 48, 40, 19, 86, 27, 90, 56, 55, 40], label: 'variable2' },
-    { data: [18, 48, 77, 9, 100, 27, 40, 56, 55, 40], label: 'variable3' },
-    { data: [78, 54, 70, 81, 56, 55, 40, 56, 55, 40], label: 'variable4' },
+    // { data: [18, 48, 77, 9, 100, 27, 40, 56, 55, 40], label: 'variable3' },
+    // { data: [78, 54, 70, 81, 56, 55, 40, 56, 55, 40], label: 'variable4' },
+  ];
+  public lineChartData2: Array<any> = [
+    { data: [65, 59, 80, 81, 56, 55, 40, 56, 55, 40], label: 'variable1' },
+    { data: [28, 48, 40, 19, 86, 27, 90, 56, 55, 40], label: 'variable2' },
+    // { data: [18, 48, 77, 9, 100, 27, 40, 56, 55, 40], label: 'variable3' },
+    // { data: [78, 54, 70, 81, 56, 55, 40, 56, 55, 40], label: 'variable4' },
   ];
   public lineChartLabels: Array<any> = ['time1', 'time2', 'time3', 'time4', 'time5', 'time6', 'time7'];
   public lineChartOptions: any = {
@@ -39,7 +45,9 @@ export class HomepageComponent implements OnInit {
       pointBorderColor: '#6800b8',
       pointHoverBackgroundColor: 'rgba(120,0,187,0.2)',
       pointHoverBorderColor: 'rgba(120,0,187)'
-    },
+    }
+  ];
+  public lineChartColors2: Array<any> = [
     { // greenish
       backgroundColor: 'rgba(189,149,0,0.3)',
       // borderColor: 'rgba(189,149,0)',
@@ -109,12 +117,12 @@ export class HomepageComponent implements OnInit {
         this.lineChartLabels = this.x_axis;
         this.lineChartData[0].label = 'open';
         this.lineChartData[0].data = this.y_axis_open;
-        this.lineChartData[1].label = 'high';
-        this.lineChartData[1].data = this.y_axis_high;
-        this.lineChartData[2].label = 'low';
-        this.lineChartData[2].data = this.y_axis_low;
-        this.lineChartData[3].label = 'close';
-        this.lineChartData[3].data = this.y_axis_close;
+        this.lineChartData2[0].label = 'high';
+        this.lineChartData2[0].data = this.y_axis_high;
+        this.lineChartData2[1].label = 'low';
+        this.lineChartData2[1].data = this.y_axis_low;
+        this.lineChartData[1].label = 'close';
+        this.lineChartData[1].data = this.y_axis_close;
 
 
       },
