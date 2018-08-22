@@ -20,7 +20,6 @@ import { SignUpService } from './signup.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ChartsModule } from 'ng2-charts';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     LoginComponent,
     SignupComponent,
     HomepageComponent,
-    SidebarComponent
   ],
   imports: [
     FormsModule,
