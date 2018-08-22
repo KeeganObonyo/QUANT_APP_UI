@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AppComponent {
   constructor(public http: Http, public router: Router) { }
 
-  status: boolean; false;
+  status: boolean; true;
 
   Togle() {
     this.status = !this.status;
