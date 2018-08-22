@@ -14,16 +14,12 @@ export class HomepageComponent implements OnInit {
   constructor(public http: Http, public router: Router, public route: ActivatedRoute, public datas: HomepageService) { }
   // lineChart
   public lineChartData: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40, 56, 55, 40], label: 'variable1' },
-    { data: [28, 48, 40, 19, 86, 27, 90, 56, 55, 40], label: 'variable2' },
-    // { data: [18, 48, 77, 9, 100, 27, 40, 56, 55, 40], label: 'variable3' },
-    // { data: [78, 54, 70, 81, 56, 55, 40, 56, 55, 40], label: 'variable4' },
+    { data: [65, 59, 70, 81, 56, 55, 40, 56, 55, 40], label: 'open' },
+    { data: [28, 69, 55, 56, 76, 66, 70, 56, 55, 40], label: 'close' },
   ];
   public lineChartData2: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40, 56, 55, 40], label: 'variable1' },
-    { data: [28, 48, 40, 19, 86, 27, 90, 56, 55, 40], label: 'variable2' },
-    // { data: [18, 48, 77, 9, 100, 27, 40, 56, 55, 40], label: 'variable3' },
-    // { data: [78, 54, 70, 81, 56, 55, 40, 56, 55, 40], label: 'variable4' },
+    { data: [65, 59, 80, 81, 56, 55, 40, 56, 55, 40], label: 'high' },
+    { data: [28, 48, 40, 19, 86, 27, 90, 56, 55, 40], label: 'low' },
   ];
   public lineChartLabels: Array<any> = ['time1', 'time2', 'time3', 'time4', 'time5', 'time6', 'time7'];
   public lineChartOptions: any = {
@@ -38,13 +34,13 @@ export class HomepageComponent implements OnInit {
       pointHoverBackgroundColor: 'rgba(0,161,184,0.8)',
       pointHoverBorderColor: 'rgba(0,161,184)'
     },
-    { // purple
-      backgroundColor: 'rgba(120,0,187,0.1)',
-      // borderColor: 'rgba(77,83,96)',
-      pointBackgroundColor: 'rgba(120,0,187)',
-      pointBorderColor: '#6800b8',
-      pointHoverBackgroundColor: 'rgba(120,0,187,0.2)',
-      pointHoverBorderColor: 'rgba(120,0,187)'
+    { // red
+      backgroundColor: 'rgba(200,43,0,0.2)',
+      // borderColor: 'rgba(148,159,177,1)',
+      pointBackgroundColor: 'rgba(200,43,0)',
+      pointBorderColor: 'rgba(200,43,0)',
+      pointHoverBackgroundColor: 'rgba(200,43,0)',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     }
   ];
   public lineChartColors2: Array<any> = [
@@ -56,14 +52,15 @@ export class HomepageComponent implements OnInit {
       pointHoverBackgroundColor: 'rgba(189,149,0)',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
-    { // red
-      backgroundColor: 'rgba(200,43,0,0.2)',
-      // borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(200,43,0)',
-      pointBorderColor: 'rgba(200,43,0)',
-      pointHoverBackgroundColor: 'rgba(200,43,0)',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    { // purple
+      backgroundColor: 'rgba(120,0,187,0.1)',
+      // borderColor: 'rgba(77,83,96)',
+      pointBackgroundColor: 'rgba(120,0,187)',
+      pointBorderColor: '#6800b8',
+      pointHoverBackgroundColor: 'rgba(120,0,187,0.2)',
+      pointHoverBorderColor: 'rgba(120,0,187)'
     }
+
   ];
   // polar chart
 
