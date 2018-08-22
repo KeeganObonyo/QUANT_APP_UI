@@ -49,7 +49,6 @@ export class SignupComponent {
   }
 
   onLogin() {
-    console.log(this.credential);
     this.log.getUserToken(this.credential).subscribe(
       res => {
         localStorage.setItem('token', 'JWT ' + res.json().token);

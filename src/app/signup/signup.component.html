@@ -1,5 +1,5 @@
-<div id="login1" class="image">
-  <div class="container-fluid">
+<div id="login1" class="">
+  <div class="container-fluid image">
     <div class="col-md-4 mx-auto">
       <form action="" style="margin-top: 50px">
         <div *ngIf="password_not_match==true" class="alert alert-danger">
@@ -22,27 +22,13 @@
           <input [(ngModel)]="pass.password1" placeholder="confirm password" class="form-control" name="password1" type="password"
             required>
         </div>
-        <ul id="parent">
-          <li>
-            <input [(ngModel)]="new_user.dateofbirth" class="form-control" matInput [matDatepicker]="picker" name="date" placeholder="date of birth"
-              required>
-          </li>
-          <li>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </li>
-        </ul>
         <div>
-          <ul id="button">
-            <li>
-              <button (click)="loginfunc()" class="btn btn-info">SignIn</button>
-            </li>
-            <li>
-              <button (click)="validate()" type="submit" class="btn btn-info">SignUp</button>
-            </li>
-          </ul>
+          <input [(ngModel)]="new_user.dateofbirth" placeholder="dateofbirth" class="form-control" name="date" type="date" required>
         </div>
+        <br>
+        <button (click)="validate()" type="submit" class="btn btn-info col-md-9">SignUp</button>
       </form>
+      <a class="nav-link" (click)="loginfunc()" style="color: black;padding-left: 80px;">signin</a>
     </div>
   </div>
 </div>

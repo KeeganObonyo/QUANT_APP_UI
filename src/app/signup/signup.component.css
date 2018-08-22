@@ -46,20 +46,6 @@ div.container-fluid{
 }
 
 } 
-#parent {
-    list-style: none;
-    width: 100%;
-    height: 90px;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-#parent > li {
-    display: inline-block;
-}
 
 .form-control {
     display: flex;
@@ -77,7 +63,7 @@ div.container-fluid{
 }
 #button {
     list-style: none;
-    width: 100%;
+    /* width: 40%; */
     height: 40%;
     /* /* margin: 2px!important; */
     padding: 0;
@@ -86,7 +72,7 @@ div.container-fluid{
     overflow-y: hidden;
 }
 
-#button > li {
+/* #button > li {
     display: inline-block;
     padding-right: 13px;
-}
+} */
