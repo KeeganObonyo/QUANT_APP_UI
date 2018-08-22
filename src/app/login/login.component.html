@@ -1,22 +1,27 @@
 <div id="login1" class="image">
-  <div class="container-fluid" >
+  <div class="container-fluid">
     <div class="col-md-4 mx-auto">
-    <form action="" style="margin-top: 80px">
-      <p><i>The wise feed their minds.</i></p>
-      <div class="form-group">
-        <label for="email"></label>
-        <input placeholder="email" [(ngModel)]="credential.email" class="form-control" name="email" type="text" required>
-      </div>
-      <div class="form-group">
-        <label for="password"></label>
-        <input placeholder="password" [(ngModel)]="credential.password" class="form-control" name="password" type="password" required>
-      </div>
-      <div class="form-group form-check">
-        <input class="form-check-input" name="checkbox" type="checkbox">
-        <label style="color: black" class="form-check-label" for="checkbox">Remember Me</label>
-      </div>      
-    </form>
-    <button (click)="onLogin()" type="submit" class="btn btn-info">Login</button>
-  </div>
+      <form action="" style="margin-top: 80px">
+        <p>
+          <i>The wise feed their minds.</i>
+        </p>
+        <div *ngIf="cannot_be_blank==true" class="alert alert-danger">
+          please input your credentials
+        </div>
+        <div class="form-group">
+          <label for="email"></label>
+          <input placeholder="email" [(ngModel)]="credential.email" class="form-control" name="email" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="password"></label>
+          <input placeholder="password" [(ngModel)]="credential.password" class="form-control" name="password" type="password" required>
+        </div>
+        <div class="form-group form-check">
+          <input class="form-check-input" name="checkbox" type="checkbox">
+          <label style="color: black" class="form-check-label" for="checkbox">Remember Me</label>
+        </div>
+      </form>
+      <button (click)="validate()" type="submit" class="btn btn-info">Login</button>
+    </div>
   </div>
 </div>
