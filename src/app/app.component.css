@@ -24,7 +24,7 @@ ul{
     bottom: 0;
     left: 0;
     right: 0;
-    background: #eee;
+    /* background: #eee; */
   }
   .wrapper {
     display: flex;
@@ -68,7 +68,7 @@ a[data-toggle="collapse"] {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    /* background: #fafafa; */
 }
 
 p {

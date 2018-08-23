@@ -1,9 +1,6 @@
 
 #canvas {
     display: block;
-    /* width: 586px!important; */
-    height: 100%!important;
-    /* color: rgba(0,0,0)!important; */
     box-shadow: 5px 10px 8px #888888;
 
 }
@@ -49,9 +46,6 @@ div.container-fluid{
 #canvas2 {
     display: block;
     box-shadow: 5px 10px 8px #888888;
-    /* width: 500px!important;
-    height: 235px!important; */
-    /* color: rgba(0,0,0)!important; */
 }
 .table{
     margin-top: 2px;

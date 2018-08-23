@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -7,14 +7,17 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(public http: Http, public router: Router) { }
 
-  status: boolean; true;
+  status: boolean; false;
 
   Togle() {
     this.status = !this.status;
     console.log(this.status);
   }
 
+  ngOnInit() {
+    this.Togle();
+  }
 }
