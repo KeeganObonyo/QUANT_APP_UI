@@ -84,7 +84,6 @@ export class HomepageComponent implements OnInit {
   public newlist: any[] = [];
   public newlist1: any[] = [];
 
-
   // table data
   public TableListData: Array<any> = [
     { data: [56, 0.65, 0.59, 0.80, 0.81], label: ['volume', 'open', 'high', 'low', 'close'] }];

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h5 class="text-center" style="font-family: 'Open Sans', sans-serif; font-weight: 500">Financial Time-series for MST</h5>
+  <!-- <h5 class="text-center" style="font-family: 'Open Sans', sans-serif; font-weight: 500">Financial Time-series for MST</h5> -->
   <div class="row">
     <div class="col-md-5">
       <div style="display: block;">
@@ -8,13 +8,13 @@
       </div>
     </div>
     <div class="col-md-5" style="margin: 0px">
-      <div style="display: block">
+      <div style="display: block" style="background-color: white!important;">
         <canvas id="canvas2" baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
           [colors]="polarChartColors" (chartHover)="chartHovered($event)" (chartClick)=chartClicked($event)></canvas>
       </div>
     </div>
     <div class="col-md-2">
-      <table class="table table-responsive-md table-condensed">
+      <table class="table table-responsive-md table-condensed" style="background-color: white!important;">
         <tr>
           <th></th>
           <th>volatility</th>
@@ -44,7 +44,7 @@
   </div>
   <div class="row">
     <div class="col-md-5" style="margin: 0px">
-      <div style="display: block">
+      <div style="display: block" style="background-color: white!important;">
         <canvas id="canvas2" baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
           [colors]="polarChartColors" (chartHover)="chartHovered($event)" (chartClick)=chartClicked($event)></canvas>
       </div>
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="col-md-2">
-      <table class="table table-responsive-md table-condensed">
+      <table class="table table-responsive-md table-condensed" style="background-color: white!important;">
         <tr>
           <th></th>
           <th>volatility</th>

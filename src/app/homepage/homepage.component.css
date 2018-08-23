@@ -2,6 +2,7 @@
 #canvas {
     display: block;
     box-shadow: 5px 10px 8px #888888;
+    background-color: white!important;
 
 }
 th

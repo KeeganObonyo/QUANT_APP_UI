@@ -28,4 +28,8 @@ export class HomepageService {
     return this.http.get(url, { headers: headers });
   }
 
+  getCompany() {
+    const url = this.Path + '/company/';
+    return this.http.get(url);
+  }
 }
