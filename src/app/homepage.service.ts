@@ -14,22 +14,22 @@ export class HomepageService {
   constructor(private http: Http, private router: Router) { }
 
   getLatestdata() {
-    const url = this.Path + '/get/data/';
-    const headers = new Headers({
-      'Authorization': localStorage.getItem('token')
-    });
-    return this.http.get(url, { headers: headers });
-  }
-  getAnalysis() {
-    const url = this.Path + '/get/graph/';
-    const headers = new Headers({
-      'Authorization': localStorage.getItem('token')
-    });
-    return this.http.get(url, { headers: headers });
-  }
-
-  getCompany() {
-    const url = this.Path + '/company/';
+    const url = this.Path + '/data/get';
+    // const headers = new Headers({
+    //   'Authorization': localStorage.getItem('token')
+    // });
     return this.http.get(url);
   }
+  getAnalysis() {
+    const url = this.Path + '/data/compute';
+    // const headers = new Headers({
+    //   'Authorization': localStorage.getItem('token')
+    // });
+    return this.http.get(url);
+  }
+
+  // getCompany() {
+  //   const url = this.Path + '/company/';
+  //   return this.http.get(url);
+  // }
 }

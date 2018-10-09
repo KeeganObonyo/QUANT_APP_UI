@@ -132,11 +132,19 @@ export class HomepageComponent implements OnInit {
   public getAnalysis() {
     this.datas.getAnalysis().subscribe(
       res => {
+        console.log(res.json());
         this.newdata = res.json();
-        this.newlist1.push(this.newdata[1]['open']);
-        this.newlist1.push(this.newdata[3]['high']);
-        this.newlist1.push(this.newdata[4]['low']);
-        this.newlist1.push(this.newdata[2]['close']);
+        ///when using the Alphavantage golang///////
+        // this.newlist1.push(this.newdata[1]['open']);
+        // this.newlist1.push(this.newdata[3]['high']);
+        // this.newlist1.push(this.newdata[4]['low']);
+        // this.newlist1.push(this.newdata[2]['close']);
+        ///////////////////////////////////////////////
+        //When using the scala LOl App//
+        this.newlist1.push(this.newdata['open']);
+        this.newlist1.push(this.newdata['high']);
+        this.newlist1.push(this.newdata['low']);
+        this.newlist1.push(this.newdata['close']);
         this.polarAreaChartData = this.newlist1;
         this.table();
       },
@@ -158,11 +166,19 @@ export class HomepageComponent implements OnInit {
   }
   public table() {
     const newlist1: any[] = [];
-    newlist1.push(this.newdata[0]['volume']);
-    newlist1.push(this.newdata[1]['open']);
-    newlist1.push(this.newdata[3]['high']);
-    newlist1.push(this.newdata[4]['low']);
-    newlist1.push(this.newdata[2]['close']);
+    ///when using the golang alphavantage app/////
+    // newlist1.push(this.newdata[0]['volume']);
+    // newlist1.push(this.newdata[1]['open']);
+    // newlist1.push(this.newdata[3]['high']);
+    // newlist1.push(this.newdata[4]['low']);
+    // newlist1.push(this.newdata[2]['close']);
+    // ////////////////////////////////////////
+    //When using the scala LOl App//
+    newlist1.push(this.newdata['volume']);
+    newlist1.push(this.newdata['open']);
+    newlist1.push(this.newdata['high']);
+    newlist1.push(this.newdata['low']);
+    newlist1.push(this.newdata['close']);
     this.TableListData[0].data = newlist1;
   }
 

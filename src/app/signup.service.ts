@@ -46,7 +46,7 @@ export class SignUpService {
   }
   
   registerUser(user: any) {
-    const url = this.Path + '/user/signup/';
+    const url = this.Path + '/users';
     const headers = new Headers({
       // 'Content-Type': 'application/json',
     });

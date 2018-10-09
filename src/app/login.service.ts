@@ -16,7 +16,7 @@ export class LoginService {
 
 
   getUserToken(credentials: any) {
-    const url = this.Path + '/user/auth/';
+    const url = this.Path + '/auth';
     const headers = new Headers({
     });
 
