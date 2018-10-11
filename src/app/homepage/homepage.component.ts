@@ -174,11 +174,11 @@ export class HomepageComponent implements OnInit {
     // newlist1.push(this.newdata[2]['close']);
     // ////////////////////////////////////////
     //When using the scala LOl App//
-    newlist1.push(this.newdata['volume']);
-    newlist1.push(this.newdata['open']);
-    newlist1.push(this.newdata['high']);
-    newlist1.push(this.newdata['low']);
-    newlist1.push(this.newdata['close']);
+    newlist1.push(Math.round(this.newdata['volume']* 10000)/10000);
+    newlist1.push(Math.round(this.newdata['open']* 10000)/10000);
+    newlist1.push(Math.round(this.newdata['high']* 10000)/10000);
+    newlist1.push(Math.round(this.newdata['low']* 10000)/10000);
+    newlist1.push(Math.round(this.newdata['close']* 10000)/10000);
     this.TableListData[0].data = newlist1;
   }
 

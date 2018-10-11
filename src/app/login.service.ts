@@ -18,6 +18,7 @@ export class LoginService {
   getUserToken(credentials: any) {
     const url = this.Path + '/auth';
     const headers = new Headers({
+      'content-type': 'application/json'
     });
 
     return this.http.post(url, JSON.stringify(credentials), { headers: headers });
