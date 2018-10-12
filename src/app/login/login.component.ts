@@ -32,7 +32,10 @@ export class LoginComponent {
     localStorage.clear();
     this.log.getUserToken(this.credential).subscribe(
       res => {
-        localStorage.setItem('token', 'JWT ' + res.json().token);
+        // for the quant app golang
+        // localStorage.setItem('token', 'JWT ' + res.json().token);
+        //for the Lol app scala
+        localStorage.setItem('token',res.json().token);
         this.loggedIn = true;
         if (localStorage.getItem('token')) {
           this.router.navigate(['']);

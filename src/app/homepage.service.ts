@@ -15,17 +15,17 @@ export class HomepageService {
 
   getLatestdata() {
     const url = this.Path + '/data/get';
-    // const headers = new Headers({
-    //   'Authorization': localStorage.getItem('token')
-    // });
-    return this.http.get(url);
+    const headers = new Headers({
+      'Authorization': localStorage.getItem('token')
+    });
+    return this.http.get(url, {headers:headers});
   }
   getAnalysis() {
     const url = this.Path + '/data/compute';
-    // const headers = new Headers({
-    //   'Authorization': localStorage.getItem('token')
-    // });
-    return this.http.get(url);
+    const headers = new Headers({
+      'Authorization': localStorage.getItem('token')
+    });
+    return this.http.get(url, {headers:headers});
   }
 
   // getCompany() {
